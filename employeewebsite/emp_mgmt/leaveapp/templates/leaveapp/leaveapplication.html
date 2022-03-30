@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Leave submission Form</h1>
+    <p>Please provide startdate & enddate in YYYY-mm-dd format</p>
+    <form  action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+
+
+      <button type="submit">Apply Leave</button>
+
+    </form>
+
+  </body>
+</html>

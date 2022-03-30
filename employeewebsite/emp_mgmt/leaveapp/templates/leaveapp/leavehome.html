@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2 align="center">leave Management Dashboard</h2>
+    <div align='center'>
+      <a href="{% url "leave_upload" %}">Apply Leave</a>
+      <a href="{% url "show_leaves" %}">Show All Leaves</a>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <form action="{% url 'data_leave' %}">
+      <label for="emailsearch">Enter Employee Email</label>
+      <input type="text" name="emailsearch">
+      <br />
+      <br>
+      <br>
+      <br>
+      <input type="submit" value="searchleaves"/>
+    </form>
+    </body>
+</html>

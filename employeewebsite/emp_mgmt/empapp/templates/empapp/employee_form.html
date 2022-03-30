@@ -1,0 +1,11 @@
+{%block body_block%}
+    <h1>New Employee Creation Form</h1><hr>
+    <form method="post">
+      {%csrf_token%}
+      {{form.as_p}}
+      <input type="submit" value="Create/Update">
+
+    </form>
+
+
+    {%endblock%}

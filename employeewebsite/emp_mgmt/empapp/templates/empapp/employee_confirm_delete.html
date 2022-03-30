@@ -1,0 +1,11 @@
+{%block body_block%}
+    <h1>Delete {{employee.name}}??</h1><hr>
+    <form method="post">
+      {%csrf_token%}
+      {{form.as_p}}
+      <input type="submit" value="Delete Record">     <button onclick="window.history.back();" class="btn btn-default" type="button">Cancel</button>
+
+    </form>
+
+
+    {%endblock%}

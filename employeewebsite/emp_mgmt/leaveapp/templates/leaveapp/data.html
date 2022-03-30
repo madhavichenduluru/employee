@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <h1>Employee Leave Details</h1>
+    <table border="2">
+      <thead>
+        <th>Leave Id</th>
+        <th>Employee Email</th>
+        <th>Leave Status</th>
+      </thead>
+      {% for leave in leaves%}
+        <tr>
+          <td>{{leave.leaveid}}</td>
+          <td>{{leave.emp}}</td>
+          <td>{{leave.leave_status}}</td>
+
+        </tr>
+      {%endfor%}
+    </table>
+    <br>
+    <br>
+    <br>
+    <a href="{% url "leave_home" %}" >LeaveHome</a>
+  </body>
+</html>

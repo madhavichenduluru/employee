@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Employees Leaves Deails</h1>
+    <table border='2'>
+      <thead>
+        <th>Leave Id</th>
+        <th>Employee Email</th>
+        <th>Leave Status</th>
+
+        <th>Actions</th>
+      </thead>
+      {%for leave in leaves%}
+      <tr>
+        <td>{{leave.leaveid}}</td>
+        <td>{{leave.emp}}</td>
+        <td>{{leave.leave_status}}</td>
+
+
+        <td><a href="{% url "approve_leave" leave.id %}" >Approve</a>&nbsp&nbsp&nbsp
+            <a href="{% url "reject_leave" leave.id %}" >Reject</a>&nbsp&nbsp&nbsp
+            <a href="{% url "delete_leave" leave.id %}" >Cancel</a></td>
+      </tr>
+      {%endfor%}
+    </table><br>
+    <br>
+    <br><br>
+    <a href="{% url "leave_home" %}" >LeaveHome</a>
+  </body>
+</html>

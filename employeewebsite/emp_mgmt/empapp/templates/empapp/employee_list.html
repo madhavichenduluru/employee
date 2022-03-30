@@ -1,0 +1,48 @@
+
+  {% block body_block %}
+  <div align="center">
+    <h1>Employee Dash Board</h1>
+  </div>
+
+    <div align='left'>
+      <a href="{% url 'user_logout' %}">Logout</a> <a href="{% url 'index' %}">Home</a>
+
+    </div>
+    <br>
+    <br>
+    <br>
+        <table>
+          <thead>
+            <tr>
+              <th>EmployeeId</th>
+              <th>Name</th>
+              <th>Email</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            {% for employee in employee_list %}
+            <tr>
+              <td>{{ employee.employeeid }}</td>
+              <td>{{ employee.name }}</td>
+              <td>{{ employee.email }}</td>
+              <td>
+                <a  href="{% url "employee_detail"  employee.id  %}">Details</a>
+                <a  href="{% url "employee_update"  employee.id  %}">Update</a>
+                <a  href="{% url "employee_delete"  employee.id  %}">Delete</a>
+
+              </td>
+            </tr>
+
+            {% endfor %}
+          </tbody>
+        </table>
+        <br>
+        <br>
+        <br>
+        <div align='left'>
+          <a href="{% url "employee_create" %}">Add Employee</a>
+
+        </div>
+
+    {% endblock %}
